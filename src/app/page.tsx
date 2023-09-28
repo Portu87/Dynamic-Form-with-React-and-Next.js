@@ -1,8 +1,7 @@
-import { Container } from "@/components/Containers"
-import Form, { FormField } from "@/components/Form/Form"
+import { Container, FlexContainer } from "@/components/Containers";
+import Form, { FormField } from "@/components/Form/Form";
 
-
-const fields:FormField[] = [
+const fields: FormField[] = [
   {
     type: "text",
     name: "name",
@@ -14,17 +13,21 @@ const fields:FormField[] = [
     name: "description",
     placeholder: "Descripción de la categoría",
     validations: [{ type: "string", min: 2, max: 200, trim: true }],
-  }
-]
+  },
+];
 export default function Home() {
   return (
     <Container>
-      <h1>Home</h1>
-      <Form fields={fields}
-            image 
-            submitText={"Crear Categoría"} 
-            type={"Categoría"} 
-            revalidateUrl={'/'} />  
+      <FlexContainer center className="items-center my-7 space-y-8">
+        <h1 className="text-2xl text-bold">Form dinamic</h1>
+        <Form
+          fields={fields}
+          image
+          submitText={"Crear Categoría"}
+          type={"Categoría"}
+          revalidateUrl={"/"}
+        />
+      </FlexContainer>
     </Container>
-  )
+  );
 }

@@ -54,13 +54,13 @@ const InputFile: React.FC<InputFileInterface> = ({ edit, disabled }) => {
             gap-3
         "
       >
-        <div className="group bg-transparent border-none transition duration-300 flex items-center justify-center text-neutral-800 hover:text-white cursor-pointer">
+        <div className="group bg-transparent border-neutral-400 transition duration-300 flex items-center justify-center text-neutral-800 cursor-pointer">
           <FaCamera className="mr-2 hover:text-neutral-600 cursor-pointer" />{" "}
           {edit ? "Cambia la Imagen" : "Sube una Imagen"}
           <input
             disabled={disabled}
-            className="absolute w-full z-50 left-0 top-0 opacity-0 cursor-pointer group-hover:cursor-pointer"
-            name="file0"
+            className="absolute w-full z-50 left-0 top-0 opacity-0 cursor-pointer group-hover:cursor-pointer border border-neutral-700"
+            name="file"
             type="file"
             id="file"
             onChange={handleChangeImg}

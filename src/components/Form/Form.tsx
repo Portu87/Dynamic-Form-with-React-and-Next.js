@@ -108,11 +108,11 @@ const Form: React.FC<FormCreateCategoryProps> = ({
         />
       ))}
       {image && <InputUploadImg />}{" "}
-      {/* Nuevo: Renderizar InputUploadImg si image es true */}
+      
       <ButtonSpinner
         type="submit"
         text={submitText}
-        className="bg-primary hover:bg-red-600 text-white"
+        className="bg-red-600 hover:bg-red-600 text-white"
       />
      
     </form>
