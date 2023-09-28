@@ -17,7 +17,7 @@ This project is a web application that allows creating dynamic forms using React
 3. Configure environment variables by creating a `.env` file based on the provided `.env.example`.
 4. Ensure that your Prisma schema is configured for MongoDB (if applicable).
 5. Run `npx prisma generate` to generate Prisma client code.
-6. Run the application using `npm start`.
+6. Run the application using `npm run dev`.
 7. Open the application in your browser and start creating dynamic forms.
 
 **Technologies Used:**
@@ -54,7 +54,7 @@ Este proyecto es una aplicación web que permite crear formularios dinámicos ut
 3. Configura las variables de entorno creando un archivo `.env` basado en el `.env.example` proporcionado.
 4. Asegúrate de que tu esquema de Prisma esté configurado para MongoDB (si es aplicable).
 5. Ejecuta `npx prisma generate` para generar el código del cliente de Prisma.
-6. Ejecuta la aplicación con `npm start`.
+6. Ejecuta la aplicación con `npm run dev`.
 7. Abre la aplicación en tu navegador y comienza a crear formularios dinámicos.
 
 **Tecnologías Utilizadas:**

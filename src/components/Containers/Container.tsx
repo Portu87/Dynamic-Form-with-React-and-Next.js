@@ -1,3 +1,11 @@
+/**
+ * Container component for layout.
+ * @param {object} props - The props for the Container component.
+ * @param {React.ReactNode} props.children - The content to be rendered inside the container.
+ * @param {boolean} props.bg - Optional. Whether to apply a background to the container.
+ * @param {string} props.className - Optional. Additional CSS classes to be applied to the container.
+ * @returns {React.FC} - A React functional component representing the container.
+ */
 import { cn } from "@/libs/utils";
 
 interface ContainerInterface {

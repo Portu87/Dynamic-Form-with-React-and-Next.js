@@ -1,3 +1,10 @@
+/**
+ * ImagePreview component for displaying an image preview with an optional delete button.
+ * @param {object} props - The props for the ImagePreview component.
+ * @param {boolean} props.disabled - Indicates whether the delete button should be disabled.
+ * @returns {React.FC} - A React functional component representing the image preview.
+ */
+
 "use client";
 import useImageUpload from "@/hooks/useImageUpload.store";
 import { cn } from "@/libs/utils";
@@ -13,6 +20,8 @@ const ImagePreview: React.FC<ImagePreviewComponentInterface> = ({
   disabled = false,
 }) => {
   const ImgUpload = useImageUpload();
+
+  // Function to handle file deletion
   const handleDeleteFile = () => {
     ImgUpload.setFile(null);
     ImgUpload.setImgPreview(null);
