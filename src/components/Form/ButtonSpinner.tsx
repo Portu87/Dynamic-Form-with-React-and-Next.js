@@ -1,16 +1,17 @@
+"use client";
+
 /**
- * ButtonSpinner component for buttons with loading spinner.
- * @param {object} props - The props for the ButtonSpinner component.
- * @param {"submit" | "button"} props.type - The type of the button (submit or regular).
- * @param {string} props.className - The CSS classes to apply to the button.
- * @param {string} [props.text=""] - Optional. The text to display on the button.
- * @param {() => void} [props.onClick] - Optional. The click event handler for the button.
- * @param {boolean} [props.isPending] - Optional. Indicates whether the button is in a pending/loading state.
- * @param {React.ReactNode} [props.icon] - Optional. An icon element to display alongside the text.
- * @returns {React.FC} - A React functional component representing the button with a loading spinner.
+ * Componente ButtonSpinner para botones con un spinner de carga.
+ * @param {object} props - Las propiedades para el componente ButtonSpinner.
+ * @param {"submit" | "button"} props.type - El tipo de botón (enviar o regular).
+ * @param {string} props.className - Las clases de CSS para aplicar al botón.
+ * @param {string} [props.text=""] - Opcional. El texto a mostrar en el botón.
+ * @param {() => void} [props.onClick] - Opcional. El controlador del evento de clic para el botón.
+ * @param {boolean} [props.isPending] - Opcional. Indica si el botón está en un estado pendiente o de carga.
+ * @param {React.ReactNode} [props.icon] - Opcional. Un elemento de icono para mostrar junto al texto.
+ * @returns {React.FC} - Un componente funcional de React que representa el botón con un spinner de carga.
  */
 
-"use client";
 
 import { cn } from "@/libs/utils";
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
@@ -33,6 +34,10 @@ const ButtonSpinner = ({
   isPending,
   icon,
 }: Props) => {
+
+  /**
+   * Obtener el estado pendiente del hook useFormStatus.
+   */
   const { pending } = useFormStatus();
   const loading = pending || isPending;
 
