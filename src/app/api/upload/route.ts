@@ -6,7 +6,6 @@ import {
   CLOUDINARY_SECRET,
 } from "@/config/config";
 
-export const runtime = "edge";
 
 cloudinary.config({
   cloud_name: CLOUDINARY_NAME,
