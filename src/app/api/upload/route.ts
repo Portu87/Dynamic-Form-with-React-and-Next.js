@@ -14,7 +14,7 @@ cloudinary.config({
 });
 
 
-export default async function POST(req: any) {
+export async function POST(req: any) {
   const data = await req.formData();
   const file = data.get("file");
  
