@@ -8,9 +8,9 @@
 
 import { FormField } from "@/components/Form/Form";
 import { CategoryInterface } from "@/interfaces/category.interface";
+import { ImageInterface } from "@/interfaces/image.interface";
 import { ResServer } from "@/interfaces/server-response.interface";
 import { prisma } from "@/libs/prismadb";
-import { UploadImg } from "@/libs/upload-image";
 import { DinamicZodSchema } from "@/zodSchemas/dinamic.zod.schema";
 import { revalidatePath } from "next/cache";
 import { ZodError } from "zod";
@@ -25,6 +25,7 @@ export const create = async ({
   data,
   type,
   image,
+  img,
   fields,
   revalidateUrl,
 }: CreateInterface): Promise<ResServer<CategoryInterface>> => {
@@ -53,12 +54,10 @@ export const create = async ({
     const formData = Object.fromEntries(data.entries());
     formSchema.parse(formData);
 
-    const img = await UploadImg(file, type);
-
     let result: any;
 
     switch (type) {
-      case "Category":
+      case "Categoría":
         result = await prisma.category.create({
           data: {
             name: formValues.name,
@@ -67,7 +66,7 @@ export const create = async ({
           },
         });
         break;
-      case "Product":
+      case "Producto":
         result = await prisma.product.create({
           data: {
             name: formValues.name,
@@ -123,6 +122,7 @@ interface CreateInterface {
   data: FormData;
   type: string;
   image: boolean;
+  img: ImageInterface;
   fields: FormField[];
   revalidateUrl: string;
 }

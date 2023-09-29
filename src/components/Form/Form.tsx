@@ -69,18 +69,26 @@ const Form: React.FC<FormCreateCategoryProps> = ({
       }
     });
 
-    const formSchema = DinamicZodSchema(fields);
-
+    
     try {
+      const formSchema = DinamicZodSchema(fields);
       const formData = Object.fromEntries(data.entries());
       delete formData.file0;
 
       formSchema.parse(formData);
 
+      const response = await fetch("/api/upload", {
+        method: "POST",
+        body: data,       
+      });
+      console.log("response api --> ",{response});
+      const img = await response.json();
+
       const { error, message, code } = await create({
         data,
         type,
         image,
+        img,
         fields,
         revalidateUrl,
       });
